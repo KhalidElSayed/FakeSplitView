@@ -356,7 +356,16 @@ typedef enum {
         self.masterViewController.view.frame = theMasterViewFrame;
         self.detailViewController.view.frame = theDetailViewFrame;
         }
-        
+
+        if (self.masterViewController.view != NULL)
+            {
+            [self.view bringSubviewToFront:self.masterViewController.view];
+            }
+	   if (self.detailViewController.view != NULL)
+            {
+            [self.view bringSubviewToFront:self.detailViewController.view];
+            }
+
     [self layoutCornerViewsToToInterfaceOrientation:toInterfaceOrientation];
     }
 
